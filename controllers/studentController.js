@@ -15,12 +15,13 @@ const addStudent = asyncHandler(async (req, res) => {
     roomNo,
     blockNo,
     status,
+    image,
   } = req.body;
 console.log('the body is', req.body)
-  const image = {
-    data: fs.readFileSync('uploads/' + req.file.filename),
-    contentType: 'image/png'
-  }
+  // const image = {
+  //   data: fs.readFileSync('uploads/' + req.file.filename),
+  //   contentType: 'image/png'
+  // }
   const studentExist = await Student.findOne({ name: name });
 
   if (studentExist) {
